@@ -1,13 +1,19 @@
 import Image from 'next/image';
 import logo from '../public/images/off_the_wok_logo_white_text_only_transparent.png';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const ResponsiveAppBar = () => {
+  const { asPath } = useRouter();
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid ms-5">
-        <a className="navbar-brand ms-5" href="#">
-          <Image src={logo} alt="OTW_Logo" width={50} height={50} />
-        </a>
+        <Link href="/">
+          <a className="navbar-brand ms-5" href="#">
+            <Image src={logo} alt="OTW_Logo" width={50} height={50} />
+          </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -22,14 +28,23 @@ const ResponsiveAppBar = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item ms-5">
-              <a className="nav-link active" aria-current="page" href="#">
-                Home
-              </a>
+              <Link href="/">
+                <a
+                  className={`nav-link ${asPath === '/' ? 'active' : ''}`}
+                  aria-current="page"
+                >
+                  Home
+                </a>
+              </Link>
             </li>
             <li className="nav-item ms-5">
-              <a className="nav-link" href="#">
-                About Us
-              </a>
+              <Link href="/about">
+                <a
+                  className={`nav-link ${asPath === '/about' ? 'active' : ''}`}
+                >
+                  About Us
+                </a>
+              </Link>
             </li>
             <li className="nav-item ms-5">
               <a className="nav-link" href="#">
