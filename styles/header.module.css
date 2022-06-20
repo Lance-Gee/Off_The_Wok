@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Monofett&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+.gradient {
+  background: rgb(236, 180, 0);
+  background: radial-gradient(
+    circle,
+    rgba(236, 180, 0, 1) 0%,
+    rgba(255, 208, 19, 1) 49%,
+    rgba(236, 180, 0, 1) 100%
+  );
+}
+
+.container {
+  max-width: 1000px;
+  width: auto !important;
+  margin: auto;
+}
+
+.headerTitle {
+  position: absolute;
+  top: 15%;
+  left: 12%;
+  font-family: 'Monofett', cursive;
+  color: black;
+  padding: none;
+  z-index: 1;
+}
+
+@media screen and (max-width: 480px) {
+  .headerTitle h1 {
+    font-size: 1vw;
+  }
+}
+
+@media screen and (max-width: 1700px) {
+  .headerTitle h1 {
+    font-size: 6vw;
+  }
+}
+
+/* .headerTitle h1 {
+  font-size: 6vw;
+} */
+
+.headerSub {
+  position: absolute;
+  top: 35%;
+  left: 12%;
+  width: 30%;
+  margin-top: 10%;
+  font-family: 'Roboto', sans-serif;
+  color: black;
+  padding: none;
+  z-index: 1;
+}
+
+.headerSub h2 {
+  font-size: 2.5vw;
+}

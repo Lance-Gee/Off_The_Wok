@@ -1,0 +1,18 @@
+.image1 {
+  position: absolute;
+  top: 115%;
+  left: 12%;
+  width: 100%;
+  z-index: 1;
+}
+
+.episodes {
+  margin-top: 25px;
+}
+
+.episodes li {
+  font-size: x-large;
+  font-weight: bold;
+  margin-top: 35px;
+  margin-left: 25px;
+}
