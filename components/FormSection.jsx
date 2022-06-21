@@ -23,7 +23,7 @@ export default function FormSection() {
               aria-describedby="emailHelp"
             />
             <div id="emailHelp" className="form-text">
-              We'll never share your email with anyone else.
+              We will never share your email with anyone else.
             </div>
           </div>
           <textarea style={{ width: '100%', height: '150px' }}></textarea>
