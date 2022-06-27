@@ -39,11 +39,7 @@ export default function EpisodeSection() {
           <div className="col" style={{ marginLeft: '-20px' }}>
             <p style={{ marginTop: '15px' }}>OFF THE WOK - EPISODE 1</p>
             <h2 style={{ marginTop: '-15px' }}>Cancel Culture</h2>
-            <ReactAudioPlayer
-              src="my_audio_file.ogg"
-              controls
-              className={classes.audioPlayer}
-            />
+            <ReactAudioPlayer src="" controls className={classes.audioPlayer} />
           </div>
         </div>
       </div>
@@ -80,11 +76,7 @@ export default function EpisodeSection() {
           <div className="col" style={{ marginLeft: '-20px' }}>
             <p style={{ marginTop: '15px' }}>OFF THE WOK - EPISODE 1</p>
             <h2 style={{ marginTop: '-15px' }}>Cancel Culture</h2>
-            <ReactAudioPlayer
-              src="my_audio_file.ogg"
-              controls
-              className={classes.audioPlayer}
-            />
+            <ReactAudioPlayer src="" controls className={classes.audioPlayer} />
           </div>
         </div>
       </div>
@@ -121,11 +113,7 @@ export default function EpisodeSection() {
           <div className="col" style={{ marginLeft: '-20px' }}>
             <p style={{ marginTop: '15px' }}>OFF THE WOK - EPISODE 1</p>
             <h2 style={{ marginTop: '-15px' }}>Cancel Culture</h2>
-            <ReactAudioPlayer
-              src="my_audio_file.ogg"
-              controls
-              className={classes.audioPlayer}
-            />
+            <ReactAudioPlayer src="" controls className={classes.audioPlayer} />
           </div>
         </div>
       </div>

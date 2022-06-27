@@ -1,3 +1,4 @@
+import axios from 'axios';
 import EpisodeSection from '../components/EpisodeSection';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
@@ -19,3 +20,24 @@ export default function Home() {
     </>
   );
 }
+
+// export async function getStaticProps() {
+//   let token;
+
+//   axios('https://accounts.spotify.com/api/token', {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/x-www-form-urlencoded',
+//       Authorization:
+//         'Basic ' +
+//         btoa(process.env.SPOTIFY_CLIENT_ID + ':' + process.env.SPOTIFY_SECRET),
+//     },
+//     data: 'grant_type=client_credentials',
+//   }).then((tokenResponse) => {
+//     token = tokenResponse.data.access_token;
+//   });
+
+//   return {
+//     props: { token },
+//   };
+// }
