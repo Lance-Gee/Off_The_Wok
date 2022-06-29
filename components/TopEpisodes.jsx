@@ -4,6 +4,7 @@ import wave from '../public/images/wave.png';
 import OTWSpotify from '../public/images/OTW_Spotify.png';
 import classes from '../styles/topEpisode.module.css';
 import axios from 'axios';
+import ReactAudioPlayer from 'react-audio-player';
 
 export default function TopEpisodes() {
   const [token, setToken] = useState();
@@ -87,14 +88,6 @@ export default function TopEpisodes() {
     });
   }, [nextTracks]);
 
-  useEffect(() => {
-    console.log(topEpi);
-  }, [topEpi]);
-
-  useEffect(() => {
-    console.log(nextTracks);
-  }, [nextTracks]);
-
   return (
     <div>
       <Image
@@ -102,7 +95,7 @@ export default function TopEpisodes() {
         alt="wave"
         layout="responsive"
         width={1656}
-        height={1233}
+        height={1733}
       />
       <div
         style={{
@@ -114,7 +107,7 @@ export default function TopEpisodes() {
       >
         <div className={classes.image1}>
           <div className="row">
-            <div className="col">
+            <div className="col-4">
               <Image
                 src={OTWSpotify}
                 alt="OTWSpotify"
@@ -123,25 +116,30 @@ export default function TopEpisodes() {
                 height={963}
               />
             </div>
-            <div className="col">
+            <div className="col-8">
               <h2>Top 5 Listened to Episodes</h2>
-              <ol className={classes.episodes}>
-                <li>
-                  <h3>Episode 1</h3>
-                </li>
-                <li>
-                  <h3>Episode 2</h3>
-                </li>
-                <li>
-                  <h3>Episode 3</h3>
-                </li>
-                <li>
-                  <h3>Episode 4</h3>
-                </li>
-                <li>
-                  <h3>Episode 5</h3>
-                </li>
-              </ol>
+              <ul className={classes.episodes}>
+                {topEpi.map((epi) => (
+                  <li key={epi.id}>
+                    <h5>{epi.name}</h5>
+                    <ReactAudioPlayer
+                      src=""
+                      controls
+                      className={classes.audioPlayer}
+                    />
+                    <h6>
+                      To Listen to the full Episode click{' '}
+                      <a
+                        rel="noreferrer"
+                        target="_blank"
+                        href={epi.external_urls.spotify}
+                      >
+                        here
+                      </a>
+                    </h6>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
