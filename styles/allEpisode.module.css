@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan&display=swap');
+
+.heading {
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 700;
+}
+.outerDiv {
+  background-color: #f0b500;
+  width: 175px;
+  height: 175px;
+  border-radius: 25px;
+  z-index: 0;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+}
+
+.wrapperDiv {
+  margin-left: 15px;
+  margin-top: 15px;
+}
+
+.audioPlayer {
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+.cardImage {
+  text-align: center;
+  margin-top: 10px;
+}

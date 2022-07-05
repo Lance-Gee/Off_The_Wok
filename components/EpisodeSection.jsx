@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import instaImage from '../public/images/instagram_post.png';
 import Image from 'next/image';
 import classes from '../styles/episodeSection.module.css';
 import ReactAudioPlayer from 'react-audio-player';
 import axios from 'axios';
+import Link from 'next/link';
 
 export default function EpisodeSection() {
   const id = '3jCv047GA6wRkDx7pa3aXR';
@@ -41,25 +41,6 @@ export default function EpisodeSection() {
           setEpisodes(tracksResponse.data.items);
           setNextTracks(tracksResponse.data.episodes.items);
         });
-        //     .then(() => {
-        //       try {
-        //         axios(
-        //           'https://api.spotify.com/v1/shows/3jCv047GA6wRkDx7pa3aXR/episodes?offset=50&limit=50&market=CA',
-        //           {
-        //             method: 'GET',
-        //             headers: {
-        //               'Content-Type': 'application/json',
-        //               Authorization: 'Bearer ' + tokenResponse.data.access_token,
-        //             },
-        //           }
-        //         ).then((nextResponse) => {
-        //           // console.log(nextResponse);
-        //           nextResponse.data.items.map((item) => {
-        //             setNextTracks((state) => [...state, item]);
-        //           });
-        //         });
-        //       } catch (error) {}
-        //     });
       } catch (error) {
         console.log(error);
       }
@@ -71,7 +52,8 @@ export default function EpisodeSection() {
   }, [nextTracks]);
 
   return (
-    <div className="container">
+    <div className="container pb-3">
+      <h1 className="pb-5">Latest Episodes</h1>
       {nextTracks.slice(0, 4).map((track) => (
         <div
           key={track.id}
@@ -94,11 +76,12 @@ export default function EpisodeSection() {
               <div className={classes.outerDiv}>
                 <div className={classes.wrapperDiv}>
                   <Image
-                    src={instaImage}
+                    src={track.images[1].url}
                     alt="instagram-image"
                     layout="fixed"
                     width={125}
                     height={125}
+                    style={{ borderRadius: '15px' }}
                   />
                 </div>
               </div>
@@ -107,18 +90,38 @@ export default function EpisodeSection() {
               <p style={{ marginTop: '15px' }}>
                 OFF THE WOK - EPISODE {track.name.substring(0, 2)}
               </p>
-              <h2 style={{ marginTop: '-15px' }}>
+              <h3 style={{ marginTop: '-15px' }}>
                 {track.name.substring(track.name.indexOf('.') + 1)}
-              </h2>
-              <ReactAudioPlayer
-                src=""
-                controls
-                className={classes.audioPlayer}
-              />
+              </h3>
+              <div className="row align-items-center">
+                <div className="col-9 align-self-center">
+                  <ReactAudioPlayer
+                    src={track.audio_preview_url}
+                    controls
+                    className={classes.audioPlayer}
+                  />
+                </div>
+                <div className="col-2" style={{ marginTop: '15px' }}>
+                  <a
+                    href={track.external_urls.spotify}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    Full Episode
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       ))}
+      <div className={classes.divider}>
+        <span></span>
+        <span>
+          <Link href="/episode">All Episodes</Link>
+        </span>
+        <span></span>
+      </div>
     </div>
   );
 }

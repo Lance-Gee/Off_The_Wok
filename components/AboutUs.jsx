@@ -8,19 +8,19 @@ import classes from '../styles/aboutUs.module.css';
 
 export default function AboutUs() {
   return (
-    <div className="container" style={{ width: '50%' }}>
-      <h1 className="mt-5 pb-5">Hello Stranger</h1>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis numquam
-        dolorem velit earum! Deserunt eaque perspiciatis voluptates soluta sunt
-        hic neque, fugiat magni saepe. Adipisci voluptate incidunt reiciendis?
-        Laudantium, esse! Lorem ipsum dolor sit amet consectetur, adipisicing
-        elit. Odio aliquid dolorum praesentium deserunt laboriosam nulla dolor.
-        Quibusdam vel eaque debitis pariatur magnam officia ipsum mollitia, et
-        facilis. Eaque, natus minus. Lorem, ipsum dolor sit amet consectetur
-        adipisicing elit. Ullam iste neque dolore eligendi vel error accusamus
-        sunt alias nesciunt? Sit ducimus a quos dolores quia nulla minus
-        quibusdam excepturi aut.
+    <div className={`container ${classes.text}`} style={{ width: '50%' }}>
+      <h1 className="mt-5 pb-3">Hello Stranger</h1>
+      <p className="pb-5">
+        OFF THE WOK is a group of peeps that just like to shoot the shit. We
+        usually chat about the comedy and struggles of growing up Asian in North
+        America, but it also depends on what the flavour of the day is. We try
+        to discover what we and our guests have in common, but more importantly,
+        what makes us unique as Asians and as individuals. If we can also raise
+        more awareness about Asian culture along the way that would be a freakin
+        win for us. Usually, you'll either find us hanging in the sunny and
+        mostly chilly city of Calgary, Canada, or across the interweb. Wherever
+        you see us, please say hello. We love strange encounters of every kind.
+        Heck, or why not just come onto the show, eh?
       </p>
       <div className="row pb-5">
         <div className="col">
@@ -33,23 +33,36 @@ export default function AboutUs() {
           />
         </div>
         <div className="col">
-          <h6>Lance Gee</h6>
+          <h6>
+            <strong>Lance Gee</strong>
+          </h6>
           <h6 className={classes.empTitle}>Co-Host</h6>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-            est voluptatem tempore aut ex? Deleniti, repellat fugit minima amet
-            sed corrupti, nihil eveniet hic aut a magni iusto expedita cum.
+            This is Lance. We're not really sure how old this picture is. We're
+            guessing it's present-day Lance, but it could just as easily be
+            college Lance. He's a family man and has a shit ton of kids which
+            speaks to how old he "really" is.
+            <br />
+            <strong>When he's not on OTW:</strong> He's tossing swings and
+            taking lunch money at the park. Gambling with his wife and flipping
+            mahjong tables.
           </p>
         </div>
       </div>
       <div className="row pb-5">
         <div className="col">
-          <h6>Eric Wu</h6>
+          <h6>
+            <strong>Eric Wu</strong>
+          </h6>
           <h6 className={classes.empTitle}>Co-Host</h6>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-            est voluptatem tempore aut ex? Deleniti, repellat fugit minima amet
-            sed corrupti, nihil eveniet hic aut a magni iusto expedita cum.
+            This is Eric. He loves video games, but he's not a gamer. He also
+            plays the piano, but he's not really a musician either. He knows
+            nothing about wizardry, but he's the closest you can get to a wizard
+            with that fake owl on his shoulder.
+            <br />
+            <strong>When he's not on OTW:</strong> He's eating, Ramen, Pho, Chow
+            Mein, Shanghai Noodles, Ho Fun, you name it. Call him Mr. Noodle.
           </p>
         </div>
         <div className="col">
@@ -73,12 +86,18 @@ export default function AboutUs() {
           />
         </div>
         <div className="col">
-          <h6>Ken Truong</h6>
+          <h6>
+            <strong>Ken Truong</strong>
+          </h6>
           <h6 className={classes.empTitle}>Editor & Designer</h6>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-            est voluptatem tempore aut ex? Deleniti, repellat fugit minima amet
-            sed corrupti, nihil eveniet hic aut a magni iusto expedita cum.
+            This is Ken. He likes to put pictures and words together on the
+            interweb and make them look semi-presentable to people like you.
+            He's also responsible for any audio mistakes on the podcasts. Blame
+            him.
+            <br />
+            <strong>When he's not on OTW:</strong> He's throwing discs at
+            people's faces
           </p>
         </div>
       </div>

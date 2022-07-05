@@ -47,9 +47,33 @@ const ResponsiveAppBar = () => {
               </Link>
             </li>
             <li className="nav-item ms-5">
-              <a className="nav-link" href="#">
-                Store
-              </a>
+              <Link href="/episode">
+                <a
+                  className={`nav-link ${
+                    asPath === '/episode' ? 'active' : ''
+                  }`}
+                >
+                  Episodes
+                </a>
+              </Link>
+            </li>
+            <li className="nav-item ms-5">
+              <Link href="/blogs">
+                <a
+                  className={`nav-link ${asPath === '/blogs' ? 'active' : ''}`}
+                >
+                  Blogs
+                </a>
+              </Link>
+            </li>
+            <li className="nav-item ms-5">
+              <Link href="/store">
+                <a
+                  className={`nav-link ${asPath === '/store' ? 'active' : ''}`}
+                >
+                  Store
+                </a>
+              </Link>
             </li>
           </ul>
         </div>

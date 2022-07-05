@@ -15,4 +15,17 @@
   font-weight: bold;
   margin-top: 35px;
   margin-left: 25px;
+  background-color: #d9d9d9;
+  border-radius: 15px;
+  width: 600px;
+}
+
+.episodes li a {
+  font-size: small;
+}
+
+.audioPlayer {
+  width: 90%;
+  margin-top: 5px;
+  margin-left: 20px;
 }

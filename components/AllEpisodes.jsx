@@ -1,13 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import Image from 'next/image';
-import wave from '../public/images/wave.png';
-import OTWSpotify from '../public/images/OTW_Spotify.png';
-import classes from '../styles/topEpisode.module.css';
 import axios from 'axios';
+import Image from 'next/image';
+import React, { useEffect, useState } from 'react';
 import ReactAudioPlayer from 'react-audio-player';
+import classes from '../styles/allEpisode.module.css';
 
-export default function TopEpisodes() {
-  // const [token, setToken] = useState(props.token);
+export default function AllEpisodes() {
   const [episodes, setEpisodes] = useState();
   const [nextTracks, setNextTracks] = useState([]);
   const [topEpi, setTopEpi] = useState([]);
@@ -83,78 +80,55 @@ export default function TopEpisodes() {
         }
       }
     });
+    console.log(nextTracks);
   }, [nextTracks]);
 
+  function truncate(str) {
+    if (str.length > 200) {
+      return str.slice(0, 200) + '...';
+    } else {
+      return str;
+    }
+  }
+
   return (
-    <div>
-      <Image
-        src={wave}
-        alt="wave"
-        layout="responsive"
-        width={1656}
-        height={1733}
-      />
-      <div
-        style={{
-          marginTop: '150px',
-          marginLeft: 'auto',
-          marginRight: 'auto',
-          width: '1000px',
-        }}
-      >
-        <div className={classes.image1}>
-          <div className="row">
-            <div className="col-4">
-              <Image
-                src={OTWSpotify}
-                alt="OTWSpotify"
-                layout="responsive"
-                width={659}
-                height={963}
+    <div className="container mt-5">
+      <h1 className={classes.heading}>off the wok episodes</h1>
+      <div className="row">
+        {nextTracks.map((track) => (
+          <div key={track.id} className="col pb-3 mt-3">
+            <div className="card mt-3" style={{ width: '18rem' }}>
+              <div className={classes.outerDiv}>
+                <div className={classes.cardImage}>
+                  <Image
+                    src={track.images[1].url}
+                    width={150}
+                    height={150}
+                    alt="Instagram-post"
+                    style={{ borderRadius: '15px' }}
+                  />
+                </div>
+              </div>
+              <ReactAudioPlayer
+                src={track.audio_preview_url}
+                controls
+                className={classes.audioPlayer}
               />
-            </div>
-            <div className="col-8">
-              <h2>Top 5 Listened to Episodes</h2>
-              <ul className={classes.episodes}>
-                {topEpi.map((epi) => (
-                  <li key={epi.id}>
-                    <h5 className="ms-3">{epi.name}</h5>
-                    <div className="row">
-                      <div className="col-2">
-                        <div className="ms-3">
-                          <Image
-                            src={epi.images[1].url}
-                            alt="instagram-image"
-                            layout="fixed"
-                            width={75}
-                            height={75}
-                            style={{ borderRadius: '15px' }}
-                          />
-                        </div>
-                      </div>
-                      <div className="col-8">
-                        <ReactAudioPlayer
-                          src=""
-                          controls
-                          className={classes.audioPlayer}
-                        />
-                      </div>
-                      <div className="col-1">
-                        <a
-                          rel="noreferrer"
-                          target="_blank"
-                          href={epi.external_urls.spotify}
-                        >
-                          <p>Full episode</p>
-                        </a>
-                      </div>
-                    </div>
-                  </li>
-                ))}
-              </ul>
+              <div className="card-body">
+                <h5 className="card-title">{track.name}</h5>
+                <p className="card-text">{truncate(track.description)}</p>
+                <a
+                  href={track.external_urls.spotify}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn btn-primary"
+                >
+                  Full Episode
+                </a>
+              </div>
             </div>
           </div>
-        </div>
+        ))}
       </div>
     </div>
   );
