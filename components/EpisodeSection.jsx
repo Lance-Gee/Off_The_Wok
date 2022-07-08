@@ -4,10 +4,13 @@ import classes from '../styles/episodeSection.module.css';
 import ReactAudioPlayer from 'react-audio-player';
 import axios from 'axios';
 import Link from 'next/link';
+import useWindowSize from '../customHook/useWindowSize';
 
 export default function EpisodeSection() {
   const id = '3jCv047GA6wRkDx7pa3aXR';
   const market = 'CA';
+
+  const windowSize = useWindowSize();
 
   const [nextTracks, setNextTracks] = useState([]);
   const [token, setToken] = useState();
@@ -55,38 +58,28 @@ export default function EpisodeSection() {
     <div className="container pb-3">
       <h1 className="pb-5">Latest Episodes</h1>
       {nextTracks.slice(0, 4).map((track) => (
-        <div
-          key={track.id}
-          className="card"
-          style={{
-            width: '90%',
-            height: '185px',
-            backgroundColor: '#D9D9D9',
-            borderRadius: '25px',
-            marginTop: '25px',
-            marginLeft: 'auto',
-            marginRight: 'auto',
-          }}
-        >
+        <div key={track.id} className={`card ${classes.cardDiv}`}>
           <div className="row">
-            <div
-              className="col-3"
-              style={{ padding: '15px', marginLeft: '15px' }}
-            >
+            {windowSize > 576 ? (
               <div className={classes.outerDiv}>
-                <div className={classes.wrapperDiv}>
-                  <Image
-                    src={track.images[1].url}
-                    alt="instagram-image"
-                    layout="fixed"
-                    width={125}
-                    height={125}
-                    style={{ borderRadius: '15px' }}
-                  />
+                <div
+                  className="col-3"
+                  style={{ padding: '15px', marginLeft: '15px' }}
+                >
+                  <div className={classes.wrapperDiv}>
+                    <Image
+                      src={track.images[1].url}
+                      alt="instagram-image"
+                      layout="fixed"
+                      width={125}
+                      height={125}
+                      style={{ borderRadius: '15px' }}
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="col" style={{ marginLeft: '-20px' }}>
+            ) : null}
+            <div className={`col ${classes.imageDiv}`}>
               <p style={{ marginTop: '15px' }}>
                 OFF THE WOK - EPISODE {track.name.substring(0, 2)}
               </p>
@@ -94,14 +87,14 @@ export default function EpisodeSection() {
                 {track.name.substring(track.name.indexOf('.') + 1)}
               </h3>
               <div className="row align-items-center">
-                <div className="col-9 align-self-center">
+                <div className="col-11 align-self-center">
                   <ReactAudioPlayer
                     src={track.audio_preview_url}
                     controls
                     className={classes.audioPlayer}
                   />
                 </div>
-                <div className="col-2" style={{ marginTop: '15px' }}>
+                <div className="col-12" style={{ marginTop: '15px' }}>
                   <a
                     href={track.external_urls.spotify}
                     rel="noreferrer"

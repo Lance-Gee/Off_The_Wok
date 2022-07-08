@@ -8,7 +8,7 @@ import classes from '../styles/aboutUs.module.css';
 
 export default function AboutUs() {
   return (
-    <div className={`container ${classes.text}`} style={{ width: '50%' }}>
+    <div className={`container ${classes.ContainerDiv}`}>
       <h1 className="mt-5 pb-3">Hello Stranger</h1>
       <p className="pb-5">
         OFF THE WOK is a group of peeps that just like to shoot the shit. We
@@ -23,7 +23,7 @@ export default function AboutUs() {
         Heck, or why not just come onto the show, eh?
       </p>
       <div className="row pb-5">
-        <div className="col">
+        <div className="col-12">
           <Image
             src={LancePic}
             alt="Lance-Gee"
@@ -32,7 +32,7 @@ export default function AboutUs() {
             height={250}
           />
         </div>
-        <div className="col">
+        <div className="col-12">
           <h6>
             <strong>Lance Gee</strong>
           </h6>
@@ -50,7 +50,7 @@ export default function AboutUs() {
         </div>
       </div>
       <div className="row pb-5">
-        <div className="col">
+        <div className="col-12">
           <h6>
             <strong>Eric Wu</strong>
           </h6>
@@ -65,7 +65,7 @@ export default function AboutUs() {
             Mein, Shanghai Noodles, Ho Fun, you name it. Call him Mr. Noodle.
           </p>
         </div>
-        <div className="col">
+        <div className="col-12">
           <Image
             src={EricPic}
             alt="Eric-Wu"
@@ -76,7 +76,7 @@ export default function AboutUs() {
         </div>
       </div>
       <div className="row pb-5">
-        <div className="col">
+        <div className="col-12">
           <Image
             src={KenPic}
             alt="Ken Truong"
@@ -85,7 +85,7 @@ export default function AboutUs() {
             height={250}
           />
         </div>
-        <div className="col">
+        <div className="col-12">
           <h6>
             <strong>Ken Truong</strong>
           </h6>

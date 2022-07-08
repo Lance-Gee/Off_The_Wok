@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Image from 'next/image';
 import ToText from '../utils/toText';
+import classes from '../styles/blogs.module.css';
 
 export default function Blogs() {
   const mediumURL =
@@ -26,8 +27,7 @@ export default function Blogs() {
             <div className="card">
               <img
                 src={post.thumbnail}
-                className="card-img-top"
-                style={{ width: '35em' }}
+                className={`card-img-top ${classes.image}`}
                 alt="post-image"
               />
               <div className="card-body">

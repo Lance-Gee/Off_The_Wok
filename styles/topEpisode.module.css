@@ -1,9 +1,56 @@
+.headphoneImage {
+  position: absolute;
+  top: 150px;
+  left: 50px;
+  width: 450px;
+  z-index: 1;
+}
+
+.wave {
+  position: relative;
+  height: 1050px;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.top5 {
+  position: absolute;
+  top: 150px;
+  left: 550px;
+  width: 800px;
+}
+
+.top5mobile {
+  position: absolute;
+  top: 150px;
+  left: 30px;
+  width: 85%;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.top5mobile h2 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.divMobile {
+  background-color: #d9d9d9;
+  padding: 5px;
+  margin-top: 10px;
+  border-radius: 18px;
+}
+
+.divMobile h5 {
+  margin-top: 15px;
+}
+
 .image1 {
   position: absolute;
   top: 115%;
   left: 12%;
   width: 100%;
-  z-index: 1;
 }
 
 .episodes {
@@ -17,7 +64,8 @@
   margin-left: 25px;
   background-color: #d9d9d9;
   border-radius: 15px;
-  width: 600px;
+  width: 75%;
+  z-index: 9;
 }
 
 .episodes li a {
@@ -28,4 +76,6 @@
   width: 90%;
   margin-top: 5px;
   margin-left: 20px;
+  z-index: 11;
+  pointer-events: all;
 }

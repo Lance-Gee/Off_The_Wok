@@ -2,3 +2,13 @@
   border: 10px solid #f0b500;
   padding: 15px;
 }
+
+.containerDiv {
+  width: 70%;
+}
+
+@media only screen and (max-width: 576px) {
+  .containerDiv {
+    width: 90%;
+  }
+}

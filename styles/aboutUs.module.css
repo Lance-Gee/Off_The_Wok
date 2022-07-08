@@ -5,6 +5,14 @@
   color: #f0b500;
 }
 
-.text {
+.ContainerDiv {
   font-family: 'Gulzar', serif;
+  width: 50%;
+}
+
+@media only screen and (max-width: 576px) {
+  .ContainerDiv {
+    font-family: 'Gulzar', serif;
+    width: 90%;
+  }
 }

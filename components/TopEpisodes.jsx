@@ -5,6 +5,7 @@ import OTWSpotify from '../public/images/OTW_Spotify.png';
 import classes from '../styles/topEpisode.module.css';
 import axios from 'axios';
 import ReactAudioPlayer from 'react-audio-player';
+import useWindowSize from '../customHook/useWindowSize';
 
 export default function TopEpisodes() {
   // const [token, setToken] = useState(props.token);
@@ -14,6 +15,8 @@ export default function TopEpisodes() {
 
   const id = '3jCv047GA6wRkDx7pa3aXR';
   const market = 'CA';
+
+  const windowSize = useWindowSize();
 
   useEffect(() => {
     axios('https://accounts.spotify.com/api/token', {
@@ -87,74 +90,88 @@ export default function TopEpisodes() {
 
   return (
     <div>
-      <Image
-        src={wave}
-        alt="wave"
-        layout="responsive"
-        width={1656}
-        height={1733}
-      />
-      <div
-        style={{
-          marginTop: '150px',
-          marginLeft: 'auto',
-          marginRight: 'auto',
-          width: '1000px',
-        }}
-      >
-        <div className={classes.image1}>
-          <div className="row">
-            <div className="col-4">
-              <Image
-                src={OTWSpotify}
-                alt="OTWSpotify"
-                layout="responsive"
-                width={659}
-                height={963}
-              />
-            </div>
-            <div className="col-8">
-              <h2>Top 5 Listened to Episodes</h2>
-              <ul className={classes.episodes}>
-                {topEpi.map((epi) => (
-                  <li key={epi.id}>
-                    <h5 className="ms-3">{epi.name}</h5>
-                    <div className="row">
-                      <div className="col-2">
-                        <div className="ms-3">
-                          <Image
-                            src={epi.images[1].url}
-                            alt="instagram-image"
-                            layout="fixed"
-                            width={75}
-                            height={75}
-                            style={{ borderRadius: '15px' }}
-                          />
-                        </div>
-                      </div>
-                      <div className="col-8">
-                        <ReactAudioPlayer
-                          src=""
-                          controls
-                          className={classes.audioPlayer}
+      <div className={classes.wave}>
+        <Image src={wave} alt="wave" layout="fill" />
+        <div className={classes.headphoneImage}>
+          {windowSize > 992 ? (
+            <Image
+              src={OTWSpotify}
+              alt="OTWSpotify"
+              layout="responsive"
+              width={750}
+              height={1096}
+            />
+          ) : null}
+        </div>
+        {windowSize > 992 ? (
+          <div className={classes.top5}>
+            <h2>Top 5 Listened to Episodes</h2>
+            <ul className={classes.episodes}>
+              {topEpi.map((epi) => (
+                <li key={epi.id}>
+                  <h5 className="ms-3">{epi.name}</h5>
+                  <div className="row">
+                    <div className="col-2">
+                      <div className="ms-3">
+                        <Image
+                          src={epi.images[1].url}
+                          alt="instagram-image"
+                          layout="fixed"
+                          width={75}
+                          height={75}
+                          style={{ borderRadius: '15px' }}
                         />
                       </div>
-                      <div className="col-1">
-                        <a
-                          rel="noreferrer"
-                          target="_blank"
-                          href={epi.external_urls.spotify}
-                        >
-                          <p>Full episode</p>
-                        </a>
-                      </div>
                     </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
+                    <div className="col-6">
+                      <ReactAudioPlayer
+                        src={epi.audio_preview_url}
+                        controls
+                        className={classes.audioPlayer}
+                      />
+                    </div>
+                    <div className="col-1">
+                      <a
+                        rel="noreferrer"
+                        target="_blank"
+                        href={epi.external_urls.spotify}
+                      >
+                        <p>Full episode</p>
+                      </a>
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
-        </div>
+        ) : (
+          <div className={classes.top5mobile}>
+            <h2>Top 5 Listened to Episodes</h2>
+            {topEpi.map((epi) => (
+              <div className={classes.divMobile} key={epi.id}>
+                <h5 className="ms-3">{epi.name}</h5>
+                <div className="row">
+                  <div className="col-9">
+                    <ReactAudioPlayer
+                      src={epi.audio_preview_url}
+                      controls
+                      className={classes.audioPlayer}
+                    />
+                  </div>
+                  <div className="col-1">
+                    <a
+                      rel="noreferrer"
+                      target="_blank"
+                      href={epi.external_urls.spotify}
+                    >
+                      <p>Full episode</p>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

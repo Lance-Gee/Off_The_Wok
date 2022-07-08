@@ -8,9 +8,9 @@ const ResponsiveAppBar = () => {
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div className="container-fluid ms-5">
+      <div className="container-fluid ms-3 ms-3-sm ms-5-md ms-5-lg ms-5-xl ms-5-xxl">
         <Link href="/">
-          <a className="navbar-brand ms-5" href="#">
+          <a className="navbar-brand">
             <Image src={logo} alt="OTW_Logo" width={50} height={50} />
           </a>
         </Link>

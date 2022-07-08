@@ -92,43 +92,45 @@ export default function AllEpisodes() {
   }
 
   return (
-    <div className="container mt-5">
-      <h1 className={classes.heading}>off the wok episodes</h1>
-      <div className="row">
-        {nextTracks.map((track) => (
-          <div key={track.id} className="col pb-3 mt-3">
-            <div className="card mt-3" style={{ width: '18rem' }}>
-              <div className={classes.outerDiv}>
-                <div className={classes.cardImage}>
-                  <Image
-                    src={track.images[1].url}
-                    width={150}
-                    height={150}
-                    alt="Instagram-post"
-                    style={{ borderRadius: '15px' }}
-                  />
+    <div>
+      <div className={`container mt-5 ${classes.containerDiv}`}>
+        <h1 className={classes.heading}>off the wok episodes</h1>
+        <div className="row">
+          {nextTracks.map((track) => (
+            <div key={track.id} className="col pb-3 mt-3">
+              <div className="card mt-3" style={{ width: '18rem' }}>
+                <div className={classes.outerDiv}>
+                  <div className={classes.cardImage}>
+                    <Image
+                      src={track.images[1].url}
+                      width={150}
+                      height={150}
+                      alt="Instagram-post"
+                      style={{ borderRadius: '15px' }}
+                    />
+                  </div>
+                </div>
+                <ReactAudioPlayer
+                  src={track.audio_preview_url}
+                  controls
+                  className={classes.audioPlayer}
+                />
+                <div className="card-body">
+                  <h5 className="card-title">{track.name}</h5>
+                  <p className="card-text">{truncate(track.description)}</p>
+                  <a
+                    href={track.external_urls.spotify}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn btn-primary"
+                  >
+                    Full Episode
+                  </a>
                 </div>
               </div>
-              <ReactAudioPlayer
-                src={track.audio_preview_url}
-                controls
-                className={classes.audioPlayer}
-              />
-              <div className="card-body">
-                <h5 className="card-title">{track.name}</h5>
-                <p className="card-text">{truncate(track.description)}</p>
-                <a
-                  href={track.external_urls.spotify}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn btn-primary"
-                >
-                  Full Episode
-                </a>
-              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

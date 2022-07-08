@@ -12,11 +12,11 @@
   );
 }
 
-.container {
+/* .container {
   max-width: 1000px;
   width: auto !important;
   margin: auto;
-}
+} */
 
 .headerTitle {
   position: absolute;
@@ -28,13 +28,40 @@
   z-index: 1;
 }
 
-@media screen and (max-width: 480px) {
+.mobileHeader h1 {
+  text-align: center;
+  font-family: 'Monofett', cursive;
+  font-size: 80px;
+}
+
+.mobileSub {
+  margin-top: 10px;
+  padding-bottom: 25px;
+  font-family: 'Gulzar', serif;
+  color: black;
+  font-size: 30px;
+  text-align: center;
+}
+
+@media screen and (min-width: 577px) and (max-width: 768px) {
   .headerTitle h1 {
-    font-size: 1vw;
+    font-size: 6vw;
   }
 }
 
-@media screen and (max-width: 1700px) {
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  .headerTitle h1 {
+    font-size: 6vw;
+  }
+}
+
+@media screen and (min-width: 993px) and (max-width: 1200px) {
+  .headerTitle h1 {
+    font-size: 6vw;
+  }
+}
+
+@media screen and (min-width: 1201px) {
   .headerTitle h1 {
     font-size: 6vw;
   }

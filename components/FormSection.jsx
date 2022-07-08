@@ -35,7 +35,7 @@ export default function FormSection() {
   };
 
   return (
-    <div className={`container mt-5 mx-auto pb-5`} style={{ width: '70%' }}>
+    <div className={`container mt-5 mx-auto pb-5 ${classes.containerDiv}`}>
       <div className={classes.outerDiv}>
         <h5 style={{ paddingBottom: '25px' }}>
           Question, Comments, or want to be on our show? Leave us a message and
