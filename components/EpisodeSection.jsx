@@ -10,7 +10,16 @@ export default function EpisodeSection() {
   const id = '3jCv047GA6wRkDx7pa3aXR';
   const market = 'CA';
 
+  const [windowWidth, setWindowWidth] = useState();
   const windowSize = useWindowSize();
+
+  useEffect(() => {
+    if (windowSize === undefined) {
+      setWindowWidth(window.innerWidth);
+    } else {
+      setWindowWidth(windowSize);
+    }
+  });
 
   const [nextTracks, setNextTracks] = useState([]);
   const [token, setToken] = useState();
@@ -60,12 +69,9 @@ export default function EpisodeSection() {
       {nextTracks.slice(0, 4).map((track) => (
         <div key={track.id} className={`card ${classes.cardDiv}`}>
           <div className="row">
-            {windowSize > 576 ? (
+            {windowWidth > 992 ? (
               <div className={classes.outerDiv}>
-                <div
-                  className="col-3"
-                  style={{ padding: '15px', marginLeft: '15px' }}
-                >
+                <div className="col-4">
                   <div className={classes.wrapperDiv}>
                     <Image
                       src={track.images[1].url}
@@ -79,7 +85,7 @@ export default function EpisodeSection() {
                 </div>
               </div>
             ) : null}
-            <div className={`col ${classes.imageDiv}`}>
+            <div className={`col  ${classes.imageDiv}`}>
               <p style={{ marginTop: '15px' }}>
                 OFF THE WOK - EPISODE {track.name.substring(0, 2)}
               </p>
@@ -87,14 +93,14 @@ export default function EpisodeSection() {
                 {track.name.substring(track.name.indexOf('.') + 1)}
               </h3>
               <div className="row align-items-center">
-                <div className="col-11 align-self-center">
+                <div className="col-10 align-self-center">
                   <ReactAudioPlayer
                     src={track.audio_preview_url}
                     controls
                     className={classes.audioPlayer}
                   />
                 </div>
-                <div className="col-12" style={{ marginTop: '15px' }}>
+                <div className="col-2" style={{ marginTop: '15px' }}>
                   <a
                     href={track.external_urls.spotify}
                     rel="noreferrer"

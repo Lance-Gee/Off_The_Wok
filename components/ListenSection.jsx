@@ -13,7 +13,7 @@ export default function ListenSection() {
           <h1 className={classes.header}>Listen On</h1>
         </div>
         <div className="row">
-          <div className="col-sm-12 col-md-3">
+          <div className="col-sm-12 col-md-4">
             <Image
               src={applePod}
               alt="apple podcast"
@@ -22,18 +22,19 @@ export default function ListenSection() {
               height={158}
             />
           </div>
-          <div className="col-sm-12 col-md-3">
-            <Image
-              src={spotifyPod}
-              alt="Spotify podcast"
-              layout="intrinsic"
-              width={350}
-              height={205}
-              style={{ marginLeft: '-40px' }}
-            />
+          <div className="col-sm-12 col-md-4">
+            <div className={classes.spotify}>
+              <Image
+                src={spotifyPod}
+                alt="Spotify podcast"
+                layout="intrinsic"
+                width={350}
+                height={205}
+              />
+            </div>
           </div>
-          <div className="col-sm-12 col-md-3">
-            <div style={{ marginLeft: '35px' }}>
+          <div className="col-sm-12 col-md-4">
+            <div className={classes.google}>
               <Image
                 src={googlePod}
                 alt="Google podcast"

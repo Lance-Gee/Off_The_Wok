@@ -7,7 +7,7 @@ const ResponsiveAppBar = () => {
   const { asPath } = useRouter();
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
       <div className="container-fluid ms-3 ms-3-sm ms-5-md ms-5-lg ms-5-xl ms-5-xxl">
         <Link href="/">
           <a className="navbar-brand">

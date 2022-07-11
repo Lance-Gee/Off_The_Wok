@@ -3,12 +3,14 @@
   width: 155px;
   height: 155px;
   border-radius: 25px;
+  margin-top: 5px;
+  margin-left: 20px;
   z-index: 0;
   overflow: hidden;
 }
 
 .wrapperDiv {
-  margin-left: 15px;
+  margin-left: 4px;
   margin-top: 15px;
 }
 
@@ -89,7 +91,7 @@
   }
 }
 
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 993px) {
   .imageDiv {
     margin-left: 25px;
   }
@@ -102,5 +104,22 @@
     margin-top: 25px;
     margin-left: auto;
     margin-right: auto;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .imageDiv {
+    margin-left: 25px;
+  }
+
+  .cardDiv {
+    width: 90%;
+    height: 168px;
+    background-color: #d9d9d9;
+    border-radius: 25px;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 10px;
   }
 }

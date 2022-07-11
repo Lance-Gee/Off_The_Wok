@@ -12,16 +12,14 @@
   );
 }
 
-/* .container {
-  max-width: 1000px;
-  width: auto !important;
-  margin: auto;
-} */
+.outerDiv {
+  position: relative;
+}
 
 .headerTitle {
   position: absolute;
   top: 15%;
-  left: 12%;
+  left: 5%;
   font-family: 'Monofett', cursive;
   color: black;
   padding: none;
@@ -43,15 +41,26 @@
   text-align: center;
 }
 
-@media screen and (min-width: 577px) and (max-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 993px) {
   .headerTitle h1 {
     font-size: 6vw;
   }
-}
 
-@media screen and (min-width: 769px) and (max-width: 992px) {
-  .headerTitle h1 {
-    font-size: 6vw;
+  .headerSub {
+    position: absolute;
+    top: 95%;
+    left: 2%;
+    width: 80%;
+    margin-top: 10%;
+    font-family: 'Gulzar', serif;
+    color: black;
+    padding: none;
+    z-index: 1;
+  }
+
+  .headerSub h2 {
+    font-size: 2.5vw;
+    font-family: 'Gulzar', serif;
   }
 }
 
@@ -59,30 +68,44 @@
   .headerTitle h1 {
     font-size: 6vw;
   }
-}
 
-@media screen and (min-width: 1201px) {
-  .headerTitle h1 {
-    font-size: 6vw;
+  .headerSub {
+    position: absolute;
+    top: 95%;
+    left: 5%;
+    width: 80%;
+    margin-top: 10%;
+    font-family: 'Gulzar', serif;
+    color: black;
+    padding: none;
+    z-index: 1;
+  }
+
+  .headerSub h2 {
+    font-size: 2.5vw;
+    font-family: 'Gulzar', serif;
   }
 }
 
-/* .headerTitle h1 {
-  font-size: 6vw;
-} */
+@media screen and (min-width: 1200px) {
+  .headerTitle h1 {
+    font-size: 80px;
+  }
 
-.headerSub {
-  position: absolute;
-  top: 35%;
-  left: 12%;
-  width: 30%;
-  margin-top: 10%;
-  font-family: 'Gulzar', serif;
-  color: black;
-  padding: none;
-  z-index: 1;
-}
+  .headerSub {
+    position: absolute;
+    top: 105%;
+    left: 5%;
+    width: 80%;
+    margin-top: 10%;
+    font-family: 'Gulzar', serif;
+    color: black;
+    padding: none;
+    z-index: 1;
+  }
 
-.headerSub h2 {
-  font-size: 2.5vw;
+  .headerSub h2 {
+    font-size: 40px;
+    font-family: 'Gulzar', serif;
+  }
 }

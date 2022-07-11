@@ -1,32 +1,8 @@
-.headphoneImage {
-  position: absolute;
-  top: 150px;
-  left: 50px;
-  width: 450px;
-  z-index: 1;
-}
-
 .wave {
   position: relative;
   height: 1050px;
   width: 100vw;
   overflow: hidden;
-}
-
-.top5 {
-  position: absolute;
-  top: 150px;
-  left: 550px;
-  width: 800px;
-}
-
-.top5mobile {
-  position: absolute;
-  top: 150px;
-  left: 30px;
-  width: 85%;
-  padding: 10px;
-  border-radius: 10px;
 }
 
 .top5mobile h2 {
@@ -78,4 +54,112 @@
   margin-left: 20px;
   z-index: 11;
   pointer-events: all;
+}
+
+@media screen and (max-width: 767px) {
+  .top5mobile {
+    position: absolute;
+    top: 150px;
+    left: 60px;
+    width: 80%;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .outerDiv {
+    position: relative;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (min-width: 767px) and (max-width: 993px) {
+  .top5mobile {
+    position: absolute;
+    top: 150px;
+    left: 80px;
+    width: 90%;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .outerDiv {
+    position: relative;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .headphoneImage {
+    position: absolute;
+    top: 150px;
+    left: 50px;
+    width: 380px;
+    z-index: 1;
+  }
+
+  .top5 {
+    position: absolute;
+    top: 150px;
+    left: 450px;
+    width: 600px;
+  }
+
+  .outerDiv {
+    position: relative;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+  .headphoneImage {
+    position: absolute;
+    top: 150px;
+    left: 50px;
+    width: 450px;
+    z-index: 1;
+  }
+
+  .top5 {
+    position: absolute;
+    top: 150px;
+    left: 550px;
+    width: 70%;
+  }
+
+  .outerDiv {
+    position: relative;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .headphoneImage {
+    position: absolute;
+    top: 150px;
+    left: -120px;
+    width: 550px;
+    z-index: 1;
+  }
+
+  .top5 {
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    width: 800px;
+  }
+
+  .outerDiv {
+    position: relative;
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
 
 function useWindowSize() {
+  const [windowSize, setWindowSize] = useState();
   const isWindowClient = typeof window === 'object';
 
-  const [windowSize, setWindowSize] = useState(
-    isWindowClient ? window.innerWidth : undefined
-  );
+  useEffect(() => {
+    isWindowClient ? window.innerWidth : undefined;
+  }, []);
 
   //👇
   useEffect(() => {
