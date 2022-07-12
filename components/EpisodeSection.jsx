@@ -93,14 +93,14 @@ export default function EpisodeSection() {
                 {track.name.substring(track.name.indexOf('.') + 1)}
               </h3>
               <div className="row align-items-center">
-                <div className="col-10 align-self-center">
+                <div className="col-8 align-self-center">
                   <ReactAudioPlayer
                     src={track.audio_preview_url}
                     controls
                     className={classes.audioPlayer}
                   />
                 </div>
-                <div className="col-2" style={{ marginTop: '15px' }}>
+                <div className="col-3" style={{ marginTop: '15px' }}>
                   <a
                     href={track.external_urls.spotify}
                     rel="noreferrer"

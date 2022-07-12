@@ -34,16 +34,16 @@ export default function AboutUs() {
         Heck, or why not just come onto the show, eh?
       </p>
       <div className="row pb-5">
-        <div className="col">
+        <div className="col-12 col-sd-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
           <Image
             src={LancePic}
             alt="Lance-Gee"
-            layout="fixed"
-            width={250}
-            height={250}
+            layout="intrinsic"
+            width={350}
+            height={350}
           />
         </div>
-        <div className="col">
+        <div className="col-12 col-sd-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
           <h6>
             <strong>Lance Gee</strong>
           </h6>
@@ -62,7 +62,7 @@ export default function AboutUs() {
       </div>
       {windowWidth > 992 ? (
         <div className="row pb-5">
-          <div className="col">
+          <div className="col-12 col-sd-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
             <h6>
               <strong>Eric Wu</strong>
             </h6>
@@ -78,28 +78,28 @@ export default function AboutUs() {
               him Mr. Noodle.
             </p>
           </div>
-          <div className="col">
+          <div className="col-12 col-sd-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
             <Image
               src={EricPic}
               alt="Eric-Wu"
-              layout="fixed"
-              width={250}
-              height={250}
+              layout="intrinsic"
+              width={350}
+              height={350}
             />
           </div>
         </div>
       ) : (
         <div className="row pb-5">
-          <div className="col">
+          <div className="col-12 col-sd-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 ">
             <Image
               src={EricPic}
               alt="Eric-Wu"
-              layout="fixed"
-              width={250}
-              height={250}
+              layout="intrinsic"
+              width={350}
+              height={350}
             />
           </div>
-          <div className="col">
+          <div className="col-12 col-sd-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
             <h6>
               <strong>Eric Wu</strong>
             </h6>
@@ -118,16 +118,16 @@ export default function AboutUs() {
         </div>
       )}
       <div className="row pb-5">
-        <div className="col">
+        <div className="col-12 col-sd-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
           <Image
             src={KenPic}
             alt="Ken Truong"
-            layout="fixed"
-            width={250}
-            height={250}
+            layout="intrinsic"
+            width={350}
+            height={350}
           />
         </div>
-        <div className="col">
+        <div className="col-12 col-sd-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
           <h6>
             <strong>Ken Truong</strong>
           </h6>
