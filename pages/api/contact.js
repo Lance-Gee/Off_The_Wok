@@ -1,4 +1,4 @@
-export default function (req, res) {
+export default function contactForm(req, res) {
   let nodemailer = require('nodemailer');
   const transporter = nodemailer.createTransport({
     port: 465,
@@ -10,7 +10,7 @@ export default function (req, res) {
     secure: true,
   });
   const mailData = {
-    from: 'OTW_CONTACT_FORM',
+    from: '"OTW_CONTACT_FORM" <noreply@example.com>',
     to: 'offthewok.info@gmail.com',
     subject: `Message From ${req.body.name}`,
     text: req.body.message + ' | Sent from: ' + req.body.email,
